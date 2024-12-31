@@ -25,14 +25,35 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#logo-container {
-    text-align: center; /* Center the logo */
-    margin-bottom: 10px;
+/* Ensure the title is displayed above the other elements */
+/*#title {
+    text-align: center;
+    margin-bottom: 20px;
+}*/
+
+/* Container for the buttons to display horizontally */
+#button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Add some space between the buttons */
 }
 
-#logo {
-    max-width: 120px; /* Adjust the size of the logo */
-    height: auto;
+/* Style for the contact button */
+#contact-button div {
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff; /* Blue color for cart button */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the view cart button */
+#view-cart-button div {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color for cart button */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #view-cart-button,#contact-button {
@@ -278,28 +299,76 @@ header {
     }
 }
 
+/* Media Query for Mobile */
 @media (max-width: 480px) {
     .product-grid {
         grid-template-columns: 1fr; /* 1 column for mobile devices */
     }
 
-    .product-info h3 {
-        font-size: 1rem; /* Smaller title for mobile */
-    }
-
-    #view-cart-button, #contact-button {
-        margin-top: 10px;
-        justify-content: center;
+    /* Ensure the title is displayed above the other elements */
+    #title {
         text-align: center;
-        cursor: pointer;
-        display: inline-flex;  /* Allows buttons to be arranged horizontally */
-        gap: 10px;  /* Adds space between the buttons */
+        margin-bottom: 20px; /* Add some space between title and buttons */
     }
 
+    /* Container for the buttons to display horizontally */
+    #button-container {
+        display: flex;
+        justify-content: center; /* Center the buttons horizontally */
+        gap: 20px; /* Add some space between the buttons */
+    }
+
+    /* Style for the contact button */
+    #contact-button div {
+        padding: 10px 20px;
+        color: white;
+        background-color: #007bff; /* Blue color for cart button */
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Style for the view cart button */
+    #view-cart-button div {
+        padding: 10px 20px;
+        background-color: #007bff; /* Blue color for cart button */
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Cart count indicator */
     .cart-count-indicator {
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 5px 10px;
+        font-size: 14px;
         position: absolute;
-        top: 2px;
-        right: 2px;
+        top: 5px;
+        right: 5px;
+    }
+
+
+    header {
+        flex-direction: column; /* Stacks the header elements vertically */
+    }
+
+    #contact-button, #view-cart-button {
+        margin-top: 10px; /* Adds space between the buttons on mobile */
+        font-size: 1rem;  /* Smaller font size for buttons on mobile */
+    }
+
+    #view-cart-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    #cart-count-indicator {
+        position: absolute;
+        top: -5px;
+        right: -10px;
         background-color: red;
         color: white;
         font-size: 12px;
