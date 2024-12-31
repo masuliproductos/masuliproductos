@@ -94,8 +94,10 @@ function updateCart() {
     const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
     const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2);
 
-    // Update header
-    document.getElementById('cart-count').textContent = cartCount;
+    // Update cart count indicator
+    document.getElementById('cart-count-indicator').textContent = cartCount > 0 ? cartCount : '';
+
+    // Optionally, you can update the total price somewhere in the header, if needed
     document.getElementById('cart-total').textContent = totalPrice;
 }
 
@@ -159,7 +161,7 @@ function sendCartViaWhatsapp() {
 }
 
 // Add event listener to the "Buy" button
-document.getElementById('buy-button').addEventListener('click', sendCartViaWhatsapp);
+//document.getElementById('buy-button').addEventListener('click', sendCartViaWhatsapp);
 
 
 // Function to empty the cart
@@ -178,7 +180,7 @@ function clearCart() {
 document.getElementById('clear-cart').addEventListener('click', clearCart);
 
 // Add event listener to the "Buy" button
-document.getElementById('buy-button').addEventListener('click', sendCartViaWhatsapp);
+//document.getElementById('buy-button').addEventListener('click', sendCartViaWhatsapp);
 
 // Add event listener to the "View Cart" button
 document.getElementById('view-cart-button').addEventListener('click', viewCart);

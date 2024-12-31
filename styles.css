@@ -35,19 +35,20 @@ header {
     height: auto;
 }
 
-#contact-button {
+#view-cart-button,#contact-button {
     display: flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
 }
 
-#contact-button span {
+#view-cart-button span,#contact-button span {
     font-size: 1rem;
     color: white;
     font-weight: bold;
 }
 
-#contact-button a {
+#view-cart-button a,#contact-button a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -63,6 +64,25 @@ header {
 #cart-count {
     margin-left: 8px;
 }
+
+.cart-count-indicator {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+#view-cart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 
 /* Container for content */
 .container {
@@ -207,7 +227,7 @@ header {
     align-items: center;
 }
 
-#view-cart-button, #buy-button {
+#buy-button {
     padding: 8px 16px;
     background-color: #4CAF50;
     color: white;
@@ -218,14 +238,6 @@ header {
     width: auto;
     min-width: 100px;
     font-family: 'Montserrat', sans-serif;
-}
-
-#view-cart-button:hover, #buy-button:hover {
-    background-color: #45a049;
-}
-
-#view-cart-button:active, #buy-button:active {
-    background-color: #004A8A;
 }
 
 /* WhatsApp Section */
@@ -248,7 +260,7 @@ header {
         text-align: left; /* Align text to the left */
     }
 
-    #contact-button {
+    #view-cart-button,#contact-button {
         margin-top: 10px;
         justify-content: center; /* Center align the contact button */
     }
@@ -273,10 +285,11 @@ header {
         max-width: 100px; /* Adjust logo size for mobile */
     }
 
-    #contact-button {
+    #view-cart-button,#contact-button {
         margin-top: 10px;
         justify-content: center;
         text-align: center;
+        cursor: pointer;
     }
 
     #cart-info {
@@ -285,7 +298,7 @@ header {
         gap: 10px;
     }
 
-    #view-cart-button, #buy-button {
+    #buy-button {
         font-size: 12px;
         padding: 8px 12px; /* Smaller buttons */
     }
