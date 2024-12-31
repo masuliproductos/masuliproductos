@@ -5,7 +5,8 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
-    margin-top: 80px; /* Adjust body margin to prevent content from being hidden behind the fixed header */
+    margin-top: 200px; /* Adjust body margin to prevent content from being hidden behind the fixed header */
+    font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -22,6 +23,36 @@ header {
     right: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#logo-container {
+    text-align: center; /* Center the logo */
+    margin-bottom: 10px; /* Add some spacing below the logo */
+}
+
+#logo {
+    max-width: 150px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#contact-button {
+    display: flex;
+    align-items: center; /* Align the text and image vertically */
+    gap: 8px; /* Add some space between the logo and the text */
+}
+
+#contact-button span {
+    font-size: 1rem; /* Adjust the font size of the text */
+    color: white; /* Make sure the text is visible on the blue background */
+    font-weight: bold; /* Optionally make the text bold */
+    /*text-transform: uppercase;*/ /* Make the text uppercase for emphasis */
+    margin-left: 5px; /* Optional: Adds slight spacing to the left of the text */
+}
+
+#contact-button a {
+    display: flex;
+    align-items: center; /* Align the icon and text within the anchor tag */
+    text-decoration: none; /* Remove underline from the link */
 }
 
 #cart-icon {
@@ -146,7 +177,8 @@ header {
     border: none; /* Removes default border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Adjust text size */
+    font-size: 16px; 
+    font-family: 'Montserrat', sans-serif; 
 }
 
 #buy-button:hover {
@@ -167,13 +199,30 @@ header {
 
 #cart-details {
     display: flex;
-    flex-direction: column; /* Stack "Items" and "Total" vertically */
-    gap: 5px; /* Adds space between "Items" and "Total" */
-    text-align: left; /* Align text to the left */
+    flex-direction: column; /* Stack the buttons vertically */
+    gap: 10px; /* Adds space between the buttons */
+    align-items: center; /* Center align the buttons */
 }
 
-#cart-details div {
-    margin-left: 0; /* Ensure there is no additional left margin */
+#view-cart-button, #buy-button {
+    padding: 8px 16px; /* Reduced padding for smaller buttons */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Smaller text size */
+    width: auto; /* Auto width for more compact buttons */
+    min-width: 100px; /* Ensures the button is not too small */
+    font-family: 'Montserrat', sans-serif; 
+}
+
+#view-cart-button:hover, #buy-button:hover {
+    background-color: #45a049; /* Darker green when hovered */
+}
+
+#view-cart-button:active, #buy-button:active {
+    background-color: #004A8A; /* Darker color when clicked */
 }
 
 .whatsapp-section {

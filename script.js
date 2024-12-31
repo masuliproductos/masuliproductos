@@ -12,7 +12,11 @@ async function loadProducts() {
 // Parse the CSV into an array of objects
 function parseCSV(csvText) {
     const lines = csvText.split('\n').filter(line => line.trim().length > 0);
-    const headers = lines[0].split(',').map(header => header.replace(/^\"|\"$/g, '').trim());
+    const headers = lines[0]
+    .split(',')
+    .map(header => header.replace(/^\"|\"$/g, '').trim())  // First remove quotes and trim
+    .map(header => header.replace(/^\"|\"$/g, '').trim());  // Second remove quotes and trim again
+
 
     return lines.slice(1).map(line => {
         const values = line.split(',').map(value => value.replace(/^\"|\"$/g, '').trim());
@@ -26,6 +30,7 @@ function parseCSV(csvText) {
 
 // Display products in grid
 function displayProducts(products) {
+    console.log(products);
     const productGrid = document.getElementById('product-grid');
     products.forEach(product => {
         const productCard = document.createElement('div');
@@ -169,17 +174,15 @@ function clearCart() {
     closeCart();
 }
 
-// Add event listener to the cart icon
-document.getElementById('cart-info').addEventListener('click', viewCart);
-
-// Add event listener to the "Send Cart via WhatsApp" button
-document.getElementById('send-whatsapp').addEventListener('click', sendCartViaWhatsapp);
-
 // Add event listener to the "Clear Cart" button
 document.getElementById('clear-cart').addEventListener('click', clearCart);
 
 // Add event listener to the "Buy" button
 document.getElementById('buy-button').addEventListener('click', sendCartViaWhatsapp);
+
+// Add event listener to the "View Cart" button
+document.getElementById('view-cart-button').addEventListener('click', viewCart);
+
 
 // Load products when the page loads
 window.onload = function() {

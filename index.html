@@ -4,30 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masuli Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
     <header>
         <div>
-            <h1>Productos Masuli</h1>
+            <h1>Masuli Productos</h1>
         </div>
+
+        <!-- WhatsApp Contact Button -->
+        <div id="contact-button">
+            <a href="https://wa.me/5491166734594?text=Hola%21%20Queria%20hacerte%20una%20pregunta%20acerca%20de%20Productos%20Masuli." target="_blank">
+                <div> <span>Contactanos por WhatsApp! </span> </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" 
+                     alt="Contact via WhatsApp" style="width: 40px; height: 40px; vertical-align: middle;">
+            </a>
+        </div>
+
         <div id="cart-info">
             <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000" alt="Cart" class="cart-image">
             <div id="cart-details">
                 <div>Items: <span id="cart-count">0</span></div>
                 <div>Total: $<span id="cart-total">0.00</span></div>
-                <button id="buy-button">Buy</button> <!-- New Buy button -->
+                <div>
+                    <button id="view-cart-button">Ver carrito</button> <!-- New View Cart button -->
+                    <button id="buy-button">Comprar</button> <!-- Existing Buy button -->
+                </div>
             </div>
         </div>
     </header>
-
-    <section class="container whatsapp-section">
-        <p>If you have any questions, feel free to reach us on WhatsApp:</p>
-        <p><strong><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="WhatsApp" style="width: 20px; vertical-align: middle;"> WhatsApp: <a href="https://wa.me/your_whatsapp_number" target="_blank">+5491166734594</a></strong></p>
-        
-        <!-- Add button to send cart details via WhatsApp -->
-        <button id="send-whatsapp" onclick="sendCartViaWhatsapp()">Send Cart via WhatsApp</button>
-    </section>
 
     <main class="container">
         <div class="product-grid" id="product-grid">
@@ -46,7 +52,6 @@
             <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
         </div>
     </div>
-
 
     <script src="script.js"></script> <!-- Link to external JS file -->
 </body>
