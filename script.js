@@ -163,26 +163,16 @@ function sendCartViaWhatsapp() {
     window.open(whatsappLink, '_blank');
 }
 
-// Add event listener to the "Buy" button
-//document.getElementById('buy-button').addEventListener('click', sendCartViaWhatsapp);
-
-
 // Function to empty the cart
 function clearCart() {
     // Empty the cart in localStorage
+    document.getElementById('cart-modal').style.display = 'none';
     localStorage.removeItem('cart');
     updateCart();
 }
 
-// Add event listener to the "Clear Cart" button
 document.getElementById('clear-cart').addEventListener('click', clearCart);
-
-// Add event listener to the "Buy" button
-//document.getElementById('buy-button').addEventListener('click', sendCartViaWhatsapp);
-
-// Add event listener to the "View Cart" button
 document.getElementById('view-cart-button').addEventListener('click', viewCart);
-
 
 // Load products when the page loads
 window.onload = function() {
