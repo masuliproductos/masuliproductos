@@ -1,14 +1,14 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
     margin-top: 200px; /* Adjust body margin to prevent content from being hidden behind the fixed header */
-    font-family: 'Montserrat', sans-serif;
 }
 
+/* Header Styles */
 header {
     background-color: #0078D7;
     color: white;
@@ -27,32 +27,30 @@ header {
 
 #logo-container {
     text-align: center; /* Center the logo */
-    margin-bottom: 10px; /* Add some spacing below the logo */
+    margin-bottom: 10px;
 }
 
 #logo {
-    max-width: 150px; /* Adjust the size of the logo */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 120px; /* Adjust the size of the logo */
+    height: auto;
 }
 
 #contact-button {
     display: flex;
-    align-items: center; /* Align the text and image vertically */
-    gap: 8px; /* Add some space between the logo and the text */
+    align-items: center;
+    gap: 8px;
 }
 
 #contact-button span {
-    font-size: 1rem; /* Adjust the font size of the text */
-    color: white; /* Make sure the text is visible on the blue background */
-    font-weight: bold; /* Optionally make the text bold */
-    /*text-transform: uppercase;*/ /* Make the text uppercase for emphasis */
-    margin-left: 5px; /* Optional: Adds slight spacing to the left of the text */
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
 }
 
 #contact-button a {
     display: flex;
-    align-items: center; /* Align the icon and text within the anchor tag */
-    text-decoration: none; /* Remove underline from the link */
+    align-items: center;
+    text-decoration: none;
 }
 
 #cart-icon {
@@ -66,12 +64,15 @@ header {
     margin-left: 8px;
 }
 
+/* Container for content */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
+    margin-top: 150px; /* Adjust for fixed header */
 }
 
+/* Product Grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -139,9 +140,10 @@ header {
     transform: scale(1);
 }
 
+/* Cart Modal */
 .cart-modal {
     position: fixed;
-    top: 100px; /* Adjust the position of the modal */
+    top: 100px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -169,62 +171,64 @@ header {
     margin-bottom: 10px;
 }
 
+/* Buy Button */
 #buy-button {
-    margin-top: 10px; /* Adds some space above the button */
-    padding: 10px 20px; /* Adds padding for the button */
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; 
-    font-family: 'Montserrat', sans-serif; 
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #buy-button:hover {
-    background-color: #45a049; /* Darker green when hovered */
+    background-color: #45a049;
 }
 
-
+/* Cart Info */
 #cart-info {
     display: flex;
-    align-items: center; /* Align the image and text vertically */
+    align-items: center;
 }
 
 .cart-image {
-    margin-right: 30px; /* Space between the image and the text */
-    width: 60px; /* Adjust the width of the cart image */
-    height: 60px; /* Adjust the height of the cart image */
+    margin-right: 30px;
+    width: 60px;
+    height: 60px;
 }
 
 #cart-details {
     display: flex;
-    flex-direction: column; /* Stack the buttons vertically */
-    gap: 10px; /* Adds space between the buttons */
-    align-items: center; /* Center align the buttons */
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
 #view-cart-button, #buy-button {
-    padding: 8px 16px; /* Reduced padding for smaller buttons */
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 14px; /* Smaller text size */
-    width: auto; /* Auto width for more compact buttons */
-    min-width: 100px; /* Ensures the button is not too small */
-    font-family: 'Montserrat', sans-serif; 
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: auto;
+    min-width: 100px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #view-cart-button:hover, #buy-button:hover {
-    background-color: #45a049; /* Darker green when hovered */
+    background-color: #45a049;
 }
 
 #view-cart-button:active, #buy-button:active {
-    background-color: #004A8A; /* Darker color when clicked */
+    background-color: #004A8A;
 }
 
+/* WhatsApp Section */
 .whatsapp-section {
     padding-top: 30px;
     padding-bottom: 20px;
@@ -232,15 +236,57 @@ header {
     background-color: #fff;
 }
 
-/* Responsive grid */
+/* Responsive Grid */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+
+    header {
+        flex-direction: column; /* Stack elements vertically in header */
+        padding: 1rem; /* Adjust padding for smaller screens */
+        text-align: left; /* Align text to the left */
+    }
+
+    #contact-button {
+        margin-top: 10px;
+        justify-content: center; /* Center align the contact button */
+    }
+
+    #cart-info {
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: center;
     }
 }
 
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 column for mobile devices */
+    }
+
+    .product-info h3 {
+        font-size: 1rem; /* Smaller title for mobile */
+    }
+
+    #logo {
+        max-width: 100px; /* Adjust logo size for mobile */
+    }
+
+    #contact-button {
+        margin-top: 10px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #cart-info {
+        flex-direction: row;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    #view-cart-button, #buy-button {
+        font-size: 12px;
+        padding: 8px 12px; /* Smaller buttons */
     }
 }
