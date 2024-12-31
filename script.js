@@ -95,7 +95,7 @@ function updateCart() {
     const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2);
 
     // Update cart count indicator
-    document.getElementById('cart-count-indicator').textContent = cartCount > 0 ? cartCount : '';
+    document.getElementById('cart-count-indicator').textContent = cartCount > 0 ? cartCount : '0';
 
     // Optionally, you can update the total price somewhere in the header, if needed
     document.getElementById('cart-total').textContent = totalPrice;
