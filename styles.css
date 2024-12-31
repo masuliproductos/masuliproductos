@@ -287,21 +287,13 @@ header {
         font-size: 1rem; /* Smaller title for mobile */
     }
 
-    #logo {
-        max-width: 100px; /* Adjust logo size for mobile */
-    }
-
-    #view-cart-button,#contact-button {
+    #view-cart-button, #contact-button {
         margin-top: 10px;
         justify-content: center;
         text-align: center;
         cursor: pointer;
-    }
-
-    #cart-info {
-        flex-direction: row;
-        margin-top: 10px;
-        gap: 10px;
+        display: inline-flex;  /* Allows buttons to be arranged horizontally */
+        gap: 10px;  /* Adds space between the buttons */
     }
 
     .cart-count-indicator {
