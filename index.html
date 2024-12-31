@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0078D7;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            margin: 0.5rem 0;
+            font-size: 1.25rem;
+        }
+
+        .product-info p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .product-info .price {
+            font-weight: bold;
+            color: #0078D7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Productos Masuli</h1>
+    </header>
+
+    <section class="container whatsapp-section">
+        <p>If you have any questions, feel free to reach us on WhatsApp:</p>
+        <p><strong><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="WhatsApp" style="width: 20px; vertical-align: middle;"> WhatsApp: <a href="https://wa.me/your_whatsapp_number" target="_blank">+1234567890</a></strong></p>
+    </section>
+
+    <main class="container">
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be loaded here dynamically -->
+        </div>
+    </main>
+
+    <script>
+        // Function to load and parse the CSV
+        async function loadProducts() {
+            const response = await fetch('products.csv');
+            const csvText = await response.text();
+            const products = parseCSV(csvText);
+            displayProducts(products);
+        }
+
+        // Parse CSV into an array of objects
+        function parseCSV(csvText) {
+            const lines = csvText.split('\n').filter(line => line.trim().length > 0); // Skip empty lines
+            const headers = lines[0].split(',');
+            const products = lines.slice(1).map(line => {
+                const values = line.split(',');
+                if (values.length !== headers.length) {
+                    console.warn(`Skipping malformed line: ${line}`);
+                    return null; // Skip malformed lines
+                }
+                const product = {};
+                headers.forEach((header, index) => {
+                    product[header.trim()] = values[index]?.trim() || ''; // Use empty string if undefined
+                });
+                return product;
+            }).filter(product => product); // Remove null entries
+            return products;
+        }
+
+        // Display products on the page
+        function displayProducts(products) {
+            const productGrid = document.getElementById('product-grid');
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.product_image}" alt="${product.product_name}">
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.product_name}</h3>
+                        <p>${product.product_description}</p>
+                        <p class="price">$${product.product_price}</p>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        // Load products when the page loads
+        document.addEventListener('DOMContentLoaded', loadProducts);
+    </script>
+</body>
+</html>
