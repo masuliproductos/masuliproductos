@@ -138,9 +138,42 @@ header {
     margin-bottom: 10px;
 }
 
+#buy-button {
+    margin-top: 10px; /* Adds some space above the button */
+    padding: 10px 20px; /* Adds padding for the button */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Adjust text size */
+}
+
+#buy-button:hover {
+    background-color: #45a049; /* Darker green when hovered */
+}
+
+
+#cart-info {
+    display: flex;
+    align-items: center; /* Align the image and text vertically */
+}
+
 .cart-image {
-    width: 30px;
-    margin-right: 8px;
+    margin-right: 30px; /* Space between the image and the text */
+    width: 60px; /* Adjust the width of the cart image */
+    height: 60px; /* Adjust the height of the cart image */
+}
+
+#cart-details {
+    display: flex;
+    flex-direction: column; /* Stack "Items" and "Total" vertically */
+    gap: 5px; /* Adds space between "Items" and "Total" */
+    text-align: left; /* Align text to the left */
+}
+
+#cart-details div {
+    margin-left: 0; /* Ensure there is no additional left margin */
 }
 
 .whatsapp-section {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Showcase</title>
+    <title>Masuli Productos</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
@@ -11,15 +11,22 @@
         <div>
             <h1>Productos Masuli</h1>
         </div>
-        <div id="cart-icon">
+        <div id="cart-info">
             <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000" alt="Cart" class="cart-image">
-            <span id="cart-count">0</span> Items - Total: $<span id="cart-total">0.00</span>
+            <div id="cart-details">
+                <div>Items: <span id="cart-count">0</span></div>
+                <div>Total: $<span id="cart-total">0.00</span></div>
+                <button id="buy-button">Buy</button> <!-- New Buy button -->
+            </div>
         </div>
     </header>
 
     <section class="container whatsapp-section">
         <p>If you have any questions, feel free to reach us on WhatsApp:</p>
-        <p><strong><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="WhatsApp" style="width: 20px; vertical-align: middle;"> WhatsApp: <a href="https://wa.me/your_whatsapp_number" target="_blank">+1234567890</a></strong></p>
+        <p><strong><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="WhatsApp" style="width: 20px; vertical-align: middle;"> WhatsApp: <a href="https://wa.me/your_whatsapp_number" target="_blank">+5491166734594</a></strong></p>
+        
+        <!-- Add button to send cart details via WhatsApp -->
+        <button id="send-whatsapp" onclick="sendCartViaWhatsapp()">Send Cart via WhatsApp</button>
     </section>
 
     <main class="container">
@@ -35,8 +42,11 @@
             <ul id="cart-items"></ul>
             <p id="total-price"></p>
             <button onclick="closeCart()">Close</button>
+            <!-- Button to empty the cart -->
+            <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
         </div>
     </div>
+
 
     <script src="script.js"></script> <!-- Link to external JS file -->
 </body>
