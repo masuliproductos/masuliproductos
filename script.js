@@ -34,7 +34,9 @@ function displayProducts(products) {
     const productGrid = document.getElementById('product-grid');
     products.forEach(product => {
         const productCard = document.createElement('div');
-        productCard.className = 'product-card';
+        productCard.className = 'product-card'; // This will apply the font to the product card
+
+        // Adding font to the dynamically created product info section
         const productImage = product.product_image ? product.product_image : 'https://via.placeholder.com/300';
         productCard.innerHTML = `
             <div class="product-image">
@@ -44,7 +46,7 @@ function displayProducts(products) {
                 <h3 id="${product.product_name}">${product.product_name}</h3>
                 <p>${product.product_description}</p>
                 <p class="price">$${product.product_price}</p>
-                <button class="add-to-cart" data-product-name="${product.product_name}" data-product-price="${product.product_price}">Add to Cart</button>
+                <button class="add-to-cart" data-product-name="${product.product_name}" data-product-price="${product.product_price}">Agregar al carrito</button>
             </div>
         `;
         productGrid.appendChild(productCard);
@@ -55,6 +57,7 @@ function displayProducts(products) {
         button.addEventListener('click', addToCart);
     });
 }
+
 
 // Function to add product to the cart
 function addToCart(event) {
@@ -110,7 +113,7 @@ function viewCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     if (cart.length === 0) {
-        cartItemsList.innerHTML = '<li>Your cart is empty</li>';
+        cartItemsList.innerHTML = '<li>Tu carrito está vacío</li>';
         const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2);
         document.getElementById('total-price').textContent = `Total: $${totalPrice}`;
     } else {
@@ -168,12 +171,7 @@ function sendCartViaWhatsapp() {
 function clearCart() {
     // Empty the cart in localStorage
     localStorage.removeItem('cart');
-
-    // Update the cart display
     updateCart();
-
-    // Close the cart modal (optional)
-    closeCart();
 }
 
 // Add event listener to the "Clear Cart" button

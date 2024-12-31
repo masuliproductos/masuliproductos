@@ -191,6 +191,28 @@ header {
     margin-bottom: 10px;
 }
 
+/* Apply Montserrat font to all elements in the cart modal */
+#cart-modal, #cart-modal button {
+    font-family: 'Montserrat', sans-serif;  /* Use Montserrat font */
+}
+
+/* Optional: Style buttons further */
+#cart-modal button {
+    font-weight: 700; /* Use bold weight for the buttons */
+    padding: 10px 20px;  /* Adjust padding for better button size */
+    background-color: #007BFF;  /* Button background color */
+    color: white;  /* Text color */
+    border: none;  /* Remove default border */
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;  /* Pointer cursor for clickable buttons */
+    transition: background-color 0.3s;  /* Smooth transition for hover */
+}
+
+#cart-modal button:hover {
+    background-color: #0056b3;  /* Darker background color on hover */
+}
+
+
 /* Buy Button */
 #buy-button {
     margin-top: 10px;
@@ -226,6 +248,21 @@ header {
     gap: 10px;
     align-items: center;
 }
+
+/* Apply the Montserrat font to product cards and text */
+.product-card, 
+.product-info, 
+.product-card h3, 
+.product-card p, 
+.product-card button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Optional: Style buttons and other elements within the product card */
+.product-card button.add-to-cart {
+    font-family: 'Montserrat', sans-serif;  /* Ensure button text uses Montserrat font */
+}
+
 
 #buy-button {
     padding: 8px 16px;
